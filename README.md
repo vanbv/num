@@ -7,7 +7,7 @@ num (Netty URL Mapping) is a Java library that adds request mapping to the Netty
 ## Getting Started
 Add dependency to start using num library:
 ```groovy
-compile group: 'com.github.vanbv', name: 'num', version: '0.0.1', ext: 'jar'
+compile group: 'com.github.vanbv', name: 'num', version: '0.0.2', ext: 'jar'
 ```
 Besides num library you need to add [Netty](https://netty.io/) library to the project.
 ## Guide
@@ -47,7 +47,9 @@ public DefaultFullHttpResponse post(@RequestBody Message message) String message
 …
 }
 ```
-To use `@RequestBody`, you must pass the implementation of the`JsonParser` interface, which parses data from the request body, to the constructor of the handler class. The library already has a default implementation of `JsonParserDefault`. The implementation uses a `jackson` parser. Therefore, if you use this implementation, you must add a dependency to the project `com.fasterxml.jackson.core:jackson-databind`.
+To use `@RequestBody`, you must pass the implementation of the`JsonParser` interface, which parses data from the request body, to the constructor of the handler class. The library already has a default implementation of `JsonParserDefault`. The implementation uses a `jackson` parser. Therefore, if you use this implementation you must add a dependency `com.fasterxml.jackson.core:jackson-databind` to the project.
+## Demo
+You can look at a demonstration of the use of num library in the [project](https://github.com/vanbv/num-demo).
 ## License
 Licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
 ## Donation
