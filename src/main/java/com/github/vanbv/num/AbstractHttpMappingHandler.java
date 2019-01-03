@@ -227,9 +227,13 @@ public abstract class AbstractHttpMappingHandler extends ChannelInboundHandlerAd
                             }
                             if (value != null && !value.isEmpty()) {
                                 try {
-                                    Method valueOfMethod = handler.getParams().get(i).getType().getMethod("valueOf",
-                                            String.class);
-                                    parameters[i] = valueOfMethod.invoke(null, value);
+                                    if (handler.getParams().get(i).getType().equals(String.class)) {
+                                        parameters[i] = value;
+                                    } else {
+                                        Method valueOfMethod = handler.getParams().get(i).getType().getMethod("valueOf",
+                                                String.class);
+                                        parameters[i] = valueOfMethod.invoke(null, value);
+                                    }
                                 } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
                                     throw new ParamException(String.format(
                                             "Error cast parameter '%s' with value '%s' to '%s, path - '%s'",
