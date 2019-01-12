@@ -7,7 +7,7 @@ num (Netty URL Mapping) is a Java library that adds request mapping to the Netty
 ## Getting Started
 Add dependency to start using num library:
 ```groovy
-compile group: 'com.github.vanbv', name: 'num', version: '0.0.2', ext: 'jar'
+compile group: 'com.github.vanbv', name: 'num', version: '0.0.3', ext: 'jar'
 ```
 Besides num library you need to add [Netty](https://netty.io/) library to the project.
 ## Guide
