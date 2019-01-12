@@ -192,7 +192,7 @@ public abstract class AbstractHttpMappingHandler extends ChannelInboundHandlerAd
             for (HttpMethodHandler handler : httpMethodHandlers) {
                 Matcher matcher = handler.getPathPattern().matcher(request.uri());
 
-                if (handler.getHttpMethod().equals(handler.getHttpMethod()) && matcher.matches()) {
+                if (handler.getHttpMethod().equals(request.method()) && matcher.matches()) {
                     Map<String, String> pathParamValues = new HashMap<>();
 
                     for (int i = 0; i < matcher.groupCount(); i++) {
